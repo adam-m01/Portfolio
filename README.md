@@ -1,7 +1,18 @@
-# PORTFOLIO
+# Portfolio
 
-Personal portfolio website using HTML, CSS & JQuery
+> My personal portfolio website, a place to showcase my projects, development journey and social links 👨‍💻
 
-## LINK
+Live site: https://adam-m01.github.io/Portfolio/
 
-https://adam-m01.github.io/Portfolio/
+
+## Technologies used
+
+ - HTML
+ - CSS
+ - JQuery
+
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
