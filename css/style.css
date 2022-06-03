@@ -18,6 +18,8 @@ body {
   cursor: url("../img/cursorWhite.svg"), auto;
 }
 
+
+
 .One {
   display: flex;
   position: absolute;
@@ -550,7 +552,7 @@ figure:hover {
 }
 
 figure:hover img {
-  transform: scale(1.25);
+  transform: scale(1.1);
 }
 
 figure:hover figcaption {
