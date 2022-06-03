@@ -10,9 +10,3 @@ Live site: https://adam-m01.github.io/Portfolio/
  - HTML
  - CSS
  - JQuery
-
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
-
