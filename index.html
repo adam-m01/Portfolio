@@ -6,10 +6,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
     <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"/>
-    <script src="./scripts/app.js"></script>
-    <link rel="stylesheet" href="css/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
     <title>Adam Murray - Portfolio</title>
     <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
@@ -19,7 +17,22 @@
 
   <body>
     <div class="main">
-      <div class="One">
+
+      <div class="mf-social-side-list">
+        <ul>
+          <li>
+            <a id="homeTab"></a><span id="homeCircle"></span><span class="chapterText" id="homeTab">HOME</span>
+          </li>
+          <li>
+            <a id="projectsTab"></a><span id="projectsCircle"></span><span class="chapterText" id="projectsTab">PROJECTS</span>
+          </li>
+          <li>
+            <a id="contactTab"></a><span id="contactCircle"></span><span class="chapterText" id="contactTab">CONTACT</span>
+          </li>
+        </ul>
+      </div>
+        
+      <div id="one">
         <div class="nameTitle">
           <div id="main-text">
             <h2>ADAM MURRAY</h2>
@@ -47,9 +60,13 @@
             </header>
           </div>
         </div>
+        <div class="scroll-down">
+          <div class="scroll-down-text">SCROLL</div>
+          <div class="scroll-down-bar"></div>
+      </div>
       </div>
 
-      <div class="Two">
+      <div id="two">
         <div class="projectsTitle">
           <div id="main-text2">
             <h2>PROJECTS</h2>
@@ -64,16 +81,42 @@
               <h3>INFO</h3>
               <p>
                 <b>
-                  Glide is a Deep Work/Pomodoro timer combined with a lofi
-                  playlist to increase productivity and work rate</b
+                  Deep Work timer combined with a lofi playlist to increase productivity and work rate</b
                 >
               </p>
               <button onclick="window.open('https://adam-m01.github.io/Glide/')" type="button">Visit</button>
             </figcaption>
           </figure>
+
+          <figure class="image-block">
+            <img src="./img/bearabilityImg.jpg" alt="" />
+            <!--500x500-->
+            <figcaption>
+              <h3>INFO</h3>
+              <p>
+                <b>
+                  Actively creating design output and website development for the Bear Ability™ clothing</b
+                >
+              </p>
+              <button onclick="window.open('https://bearability.co.uk/')" type="button">Visit</button>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="contactTitle">
+          <div id="main-text">
+            <h2>CONTACT</h2>
+          </div>
+
+          <div id="message">
+            <h3>ADAM.M01@HOTMAIL.COM</h3>
+          </div>
         </div>
       </div>
+
+
     </div>
+    
     <div class="area">
       <ul class="circles">
         <li></li>
