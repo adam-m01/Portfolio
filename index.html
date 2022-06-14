@@ -1,214 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
-    <meta
-      name="viewport"
-      content="viewport-fit=cover, width=device-width, initial-scale=1.0"
-    />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Adam Murray - Portfolio</title>
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="./img/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./img/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="./img/favicon-16x16.png"
-    />
-    <link rel="manifest" href="./img/site.webmanifest" />
-  </head>
 
-  <body>
-    <div class="main">
-      <div class="mf-social-side-list">
-        <ul>
-          <li>
-            <a id="homeTab"></a><span id="homeCircle"></span
-            ><span class="chapterText" id="homeTab">HOME</span>
-          </li>
-          <li>
-            <a id="projectsTab"></a><span id="projectsCircle"></span
-            ><span class="chapterText" id="projectsTab">PROJECTS</span>
-          </li>
-          <li>
-            <a id="contactTab"></a><span id="contactCircle"></span
-            ><span class="chapterText" id="contactTab">CONTACT</span>
-          </li>
-        </ul>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Adam Murray - Portfolio</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png" />
+  <link rel="manifest" href="./img/site.webmanifest" />
+</head>
 
-      <div id="one">
-        <div class="nameTitle">
-          <div id="main-text">
-            <h2>ADAM MURRAY</h2>
-          </div>
-
-          <div id="message">
-            <header>
-              <div class="socilIcon"></div>
-              <a href="https://github.com/adam-m01" target="new" title="GitHub">
-                <img
-                  class="socialicon"
-                  src="./img/github.png"
-                  height="50"
-                  width="50"
-                />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/adammurray01/"
-                target="new"
-                title="LinkedIn"
-              >
-                <img
-                  class="socialicon"
-                  src="./img/linkedin.png"
-                  height="50"
-                  width="50"
-                />
-              </a>
-            </header>
-          </div>
-        </div>
-        <div class="scroll-down">
-          <div class="scroll-down-text">SCROLL</div>
-          <div class="scroll-down-bar"></div>
-        </div>
-      </div>
-
-      <div id="two">
-        <div class="projectsTitle">
-          <div id="main-text2">
-            <h2>PROJECTS</h2>
-          </div>
-        </div>
-
-        <div class="slot">
-          <article class="slot-item" id="glideSlot">
-            <div class="slot-image">
-              <img src="./img/glideImg.jpg" width="1500" height="1500" alt="" />
-            </div>
-            <div class="slot-content">
-              <p class="slot-tags">
-                <span class="slot-tag">HTML</span>
-                <span class="slot-tag">CSS</span>
-                <span class="slot-tag">JQUERY</span>
-              </p>
-
-              <h1 class="slot-title"><a href="#">GLIDE</a></h1>
-
-              <p class="slot-desc">
-                Deep Work/Pomodoro timer combined with a lofi playlist to
-                increase productivity and work rate
-              </p>
-
-              <button
-                onclick="window.open('https://adam-m01.github.io/Glide/')"
-                class="slot-visit"
-                type="button"
-              >
-                View
-              </button>
-            </div>
-          </article>
-        </div>
-
-        <div class="slot">
-          <article class="slot-item" id="bearSlot">
-            <div class="slot-image">
-              <img
-                src="./img/bearabilityImg.jpg"
-                width="1500"
-                height="1368"
-                alt=""
-              />
-            </div>
-            <div class="slot-content">
-              <p class="slot-tags">
-                <span class="slot-tag">PS</span>
-                <span class="slot-tag">AI</span>
-                <span class="slot-tag">LIQUID</span>
-              </p>
-
-              <h1 class="slot-title"><a href="#">BEAR ABILITY ™</a></h1>
-
-              <p class="slot-desc">
-                Actively creating design output and website development for the
-                Bear Ability™
-              </p>
-
-              <button
-                onclick="window.open('https://bearability.co.uk/')"
-                class="slot-visit"
-                type="button"
-              >
-                View
-              </button>
-            </div>
-          </article>
-        </div>
-
-        <div class="contactTitle">
-          <div id="main-text">
-            <h2>CONTACT</h2>
-          </div>
-
-          <div id="message">
-            <h3>ADAM.M01@HOTMAIL.COM</h3>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="area">
-      <ul class="circles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+<body>
+  <div class="main">
+    <div class="mf-social-side-list">
+      <ul>
+        <li>
+          <a id="homeTab"></a><span id="homeCircle"></span><span class="chapterText" id="homeTab">HOME</span>
+        </li>
+        <li>
+          <a id="projectsTab"></a><span id="projectsCircle"></span><span class="chapterText"
+            id="projectsTab">PROJECTS</span>
+        </li>
+        <li>
+          <a id="contactTab"></a><span id="contactCircle"></span><span class="chapterText"
+            id="contactTab">CONTACT</span>
+        </li>
       </ul>
     </div>
-    <script src="./scripts/app.js" type="text/javascript"></script>
-  </body>
+
+    <div id="one">
+      <div class="nameTitle">
+        <div id="main-text">
+          <h2>ADAM MURRAY</h2>
+        </div>
+
+        <div id="message">
+          <header>
+            <a href="https://github.com/adam-m01" target="new" title="GitHub">
+              <img class="socialicon" src="./img/github.png" height="50" width="50" />
+            </a>
+            <a href="https://www.linkedin.com/in/adammurray01/" target="new" title="LinkedIn">
+              <img class="socialicon" src="./img/linkedin.png" height="50" width="50" />
+            </a>
+          </header>
+        </div>
+      </div>
+      <div class="scroll-down">
+        <div class="scroll-down-text">SCROLL</div>
+        <div class="scroll-down-bar"></div>
+      </div>
+    </div>
+
+    <div id="two">
+      <div class="projectsTitle">
+        <div id="main-text">
+          <h2>PROJECTS</h2>
+        </div>
+      </div>
+
+      <div class="slot">
+        <article class="slot-item" id="glideSlot">
+          <div class="slot-image">
+            <img src="./img/glideImg.jpg" width="1500" height="1500" alt="" />
+          </div>
+          <div class="slot-content">
+            <p class="slot-tags">
+              <span class="slot-tag">HTML</span>
+              <span class="slot-tag">CSS</span>
+              <span class="slot-tag">JQUERY</span>
+            </p>
+
+            <h1 class="slot-title">GLIDE</h1>
+
+            <p class="slot-desc">
+              Deep Work/Pomodoro timer combined with a lofi playlist to
+              increase productivity and work rate
+            </p>
+
+            <button onclick="window.open('https://adam-m01.github.io/Glide/')" class="slot-visit" type="button">
+              View
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <div class="slot">
+        <article class="slot-item" id="bearSlot">
+          <div class="slot-image">
+            <img src="./img/bearabilityImg.jpg" width="1500" height="1368" alt="" />
+          </div>
+          <div class="slot-content">
+            <p class="slot-tags">
+              <span class="slot-tag">PS</span>
+              <span class="slot-tag">AI</span>
+              <span class="slot-tag">LIQUID</span>
+            </p>
+
+            <h1 class="slot-title">BEAR ABILITY ™</h1>
+
+            <p class="slot-desc">
+              Actively creating design output and website development for the
+              Bear Ability™
+            </p>
+
+            <button onclick="window.open('https://bearability.co.uk/')" class="slot-visit" type="button">
+              View
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <div class="contactTitle">
+        <div id="main-text">
+          <h2>CONTACT</h2>
+        </div>
+
+        <div id="message">
+          <h3>ADAM.M01@HOTMAIL.COM</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="area">
+    <ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  <script src="./scripts/app.js" type="text/javascript"></script>
+</body>
+
 </html>
