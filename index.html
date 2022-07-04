@@ -9,16 +9,18 @@
   <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <link rel="stylesheet" href="css/style.css" />
-  <title>Adam Murray - Portfolio</title>
+  <title>Adam Murray &#128640; | Portfolio</title>
   <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png" />
   <link rel="manifest" href="./img/site.webmanifest" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
 </head>
 
 <body>
   <div class="main">
-    <div class="mf-social-side-list">
+    <div class="mf-social-side-list animate__animated animate__fadeInUp">
       <ul>
         <li>
           <a id="homeTab"></a><span id="homeCircle"></span><span class="chapterText" id="homeTab">HOME</span>
@@ -34,22 +36,21 @@
       </ul>
     </div>
 
-    <div id="one">
+    <div id="one" class="animate__animated animate__fadeInUp">
       <div class="nameTitle">
+
+        <div id="message">
+          <h2>Hello, I am</h2>
+        </div>
+
         <div id="main-text">
           <h2>ADAM MURRAY</h2>
         </div>
 
         <div id="message">
-          <header>
-            <a href="https://github.com/adam-m01" target="new" title="GitHub">
-              <img class="socialicon" src="./img/github.png" height="50" width="50" />
-            </a>
-            <a href="https://www.linkedin.com/in/adammurray01/" target="new" title="LinkedIn">
-              <img class="socialicon" src="./img/linkedin.png" height="50" width="50" />
-            </a>
-          </header>
+          <h2>Software Designer / Developer</h2>
         </div>
+
       </div>
       <div class="scroll-down">
         <div class="scroll-down-text">SCROLL</div>
@@ -60,72 +61,96 @@
     <div id="two">
       <div class="projectsTitle">
         <div id="main-text">
-          <h2>PROJECTS</h2>
+          <h2>MY PROJECTS</h2>
         </div>
       </div>
 
-      <div class="slot">
-        <article class="slot-item" id="glideSlot">
-          <div class="slot-image">
-            <img src="./img/glideImg.jpg" width="1500" height="1500" alt="" />
-          </div>
-          <div class="slot-content">
-            <p class="slot-tags">
-              <span class="slot-tag">HTML</span>
-              <span class="slot-tag">CSS</span>
-              <span class="slot-tag">JQUERY</span>
-            </p>
+      <div id="projectSlots">
 
-            <h1 class="slot-title">GLIDE</h1>
+        <div class="slot">
+          <article class="slot-item" id="glideSlot">
+            <div class="slot-image">
+              <img src="./img/glideImg.jpg" width="1500" height="1500" alt="" />
+            </div>
+            <div class="slot-content">
+              <p class="slot-tags">
+                <span class="slot-tag">HTML</span>
+                <span class="slot-tag">CSS</span>
+                <span class="slot-tag">JQUERY</span>
+              </p>
 
-            <p class="slot-desc">
-              Deep Work/Pomodoro timer combined with a lofi playlist to
-              increase productivity and work rate
-            </p>
+              <h1 class="slot-title">GLIDE</h1>
 
-            <button onclick="window.open('https://adam-m01.github.io/Glide/')" class="slot-visit" type="button">
-              View
-            </button>
-          </div>
-        </article>
+              <p class="slot-desc">
+                Deep Work/Pomodoro timer combined with a lofi playlist to
+                increase productivity and work rate
+              </p>
+
+              <button onclick="window.open('https://adam-m01.github.io/Glide/')" class="slot-visit" type="button">
+                View
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <div class="slot">
+          <article class="slot-item" id="bearSlot">
+            <div class="slot-image">
+              <img src="./img/bearabilityImg.jpg" width="1500" height="1368" alt="" />
+            </div>
+            <div class="slot-content">
+              <p class="slot-tags">
+
+                <span class="slot-tag">PS</span>
+                <span class="slot-tag">AI</span>
+                <span class="slot-tag">LIQUID</span>
+              </p>
+
+
+              <h1 class="slot-title">BEAR ABILITY ™</h1>
+
+              <p class="slot-desc">
+                Actively creating design output and website development for the
+                Bear Ability™
+              </p>
+
+              <button onclick="window.open('https://bearability.co.uk/')" class="slot-visit" type="button">
+                View
+              </button>
+            </div>
+          </article>
+        </div>
       </div>
 
-      <div class="slot">
-        <article class="slot-item" id="bearSlot">
-          <div class="slot-image">
-            <img src="./img/bearabilityImg.jpg" width="1500" height="1368" alt="" />
-          </div>
-          <div class="slot-content">
-            <p class="slot-tags">
-              <span class="slot-tag">PS</span>
-              <span class="slot-tag">AI</span>
-              <span class="slot-tag">LIQUID</span>
-            </p>
-
-            <h1 class="slot-title">BEAR ABILITY ™</h1>
-
-            <p class="slot-desc">
-              Actively creating design output and website development for the
-              Bear Ability™
-            </p>
-
-            <button onclick="window.open('https://bearability.co.uk/')" class="slot-visit" type="button">
-              View
-            </button>
-          </div>
-        </article>
-      </div>
 
       <div class="contactTitle">
         <div id="main-text">
-          <h2>CONTACT</h2>
+          <h2>CONTACT ME</h2>
         </div>
 
         <div id="message">
-          <h3>ADAM.M01@HOTMAIL.COM</h3>
+          <h2>adam.m01@hotmail.com</h2>
         </div>
+
+
+        <header id="socialButtons">
+          <a href="https://github.com/adam-m01" target="new" title="GitHub">
+            <img class="socialicon" src="./img/github.png" height="50" width="50" />
+          </a>
+          <a href="https://www.linkedin.com/in/adammurray01/" target="new" title="LinkedIn">
+            <img class="socialicon" src="./img/linkedin.png" height="50" width="50" />
+          </a>
+        </header>
+
       </div>
+
+
+
     </div>
+
+
+
+
   </div>
 
   <div class="area">
