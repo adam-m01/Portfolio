@@ -438,7 +438,7 @@ body {
 }
 
 .slot-titleContact {
-  display: itflex;
+  display: flex;
   gap: 5px;
   margin: 0;
   font-size: 1.4em;
