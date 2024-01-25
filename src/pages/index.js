@@ -7,6 +7,7 @@ import Stack from "../../components/Stack";
 import Projects from "../../components/Projects";
 import Contact from "../../components/Contact";
 import Footer from "../../components/Footer";
+import LoadingScreen from "../../components/LoadingScreen";
 
 console.log(
   "%c Thanks for checking out my site! 🚀 ",
@@ -16,9 +17,7 @@ console.log(
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
 
-  const toggleDarkMode = () => {
-    setDarkMode((prevDarkMode) => !prevDarkMode);
-  };
+  const toggleDarkMode = () => setDarkMode(!darkMode);
 
   return (
     <>
@@ -33,9 +32,10 @@ export default function Home() {
         </Head>
         <Navbar toggleDarkMode={toggleDarkMode} />
         <main
-          className={` bg-deepBlue px-6  dark:bg-white font-poppins `}
+          className={`bg-deepBlue px-6 dark:bg-white font-poppins`}
           id="home"
         >
+          <LoadingScreen />
           <Main />
           <Intro />
           <Stack />

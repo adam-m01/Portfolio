@@ -10,11 +10,11 @@ import {
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
-import mainLogo from "../public/logo-sub.webp";
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 
 const Navbar = ({ toggleDarkMode, darkMode }) => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [moonIconChanged, setMoonIconChanged] = useState(false);
+  const [moonIconChanged, setMoonIconChanged] = useState(true);
 
   const handleNav = () => {
     setMenuOpen(!menuOpen);
@@ -37,51 +37,81 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
         className={`relative ${
           menuOpen
             ? "h-[3.7rem] z-50  "
-            : "backdrop-blur-extra h-[3.7rem] rounded-2xl dark:backdrop-blur-none"
+            : "backdrop-blur-extra h-[3.7rem] rounded-2xl dark:backdrop-blur-none "
         }`}
       >
         <div className="flex justify-between items-center h-full w-full px-4 2xl:px-[2rem]">
-          <Link href="#home">
+          <ScrollLink
+            to="home"
+            spy={true}
+            smooth={true}
+            offset={-100}
+            duration={100}
+          >
             <Image
-              src={mainLogo}
+              src="/logo-sub.webp"
               width={60}
               height={60}
               className="cursor-pointer"
               alt="logo"
             />
-          </Link>
+          </ScrollLink>
 
-          <div className="hidden font-poppins lg:flex ">
-            <ul className="hidden lg:flex md:flex lg:items-center lg:justify-center">
-              <li className="ml-8">
-                <Link href="#one">
+          <div className="hidden font-poppins lg:flex text-white">
+            <ul className="hidden lg:flex md:flex lg:items-center lg:justify-center ">
+              <li className="ml-8 cursor-pointer ">
+                <ScrollLink
+                  to="one"
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={100}
+                >
                   <span className="relative before:content-[''] before:absolute before:block before:w-full before:h-[2px] before:bottom-0 before:left-0 before:bg-white before:hover:scale-x-100 before:scale-x-0 before:origin-top-left before:transition before:ease-in-out before:duration-300">
                     About
                   </span>
-                </Link>
+                </ScrollLink>
               </li>
-              <li className="ml-8">
-                <Link href="#two">
+              <li className="ml-8 cursor-pointer">
+                <ScrollLink
+                  to="two"
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={100}
+                >
                   <span className="relative before:content-[''] before:absolute before:block before:w-full before:h-[2px] before:bottom-0 before:left-0 before:bg-white before:hover:scale-x-100 before:scale-x-0 before:origin-top-left before:transition before:ease-in-out before:duration-300">
                     Skills
                   </span>
-                </Link>
+                </ScrollLink>
               </li>
-              <li className="ml-8">
-                <Link href="#three">
+              <li className="ml-8 cursor-pointer">
+                <ScrollLink
+                  to="three"
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={100}
+                >
                   <span className="relative before:content-[''] before:absolute before:block before:w-full before:h-[2px] before:bottom-0 before:left-0 before:bg-white before:hover:scale-x-100 before:scale-x-0 before:origin-top-left before:transition before:ease-in-out before:duration-300">
                     Projects
                   </span>
-                </Link>
+                </ScrollLink>
               </li>
-              <li className="ml-8">
-                <Link href="#four">
+              <li className="ml-8 cursor-pointer">
+                <ScrollLink
+                  to="four"
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={100}
+                >
                   <span className="relative before:content-[''] before:absolute before:block before:w-full before:h-[2px] before:bottom-0 before:left-0 before:bg-white before:hover:scale-x-100 before:scale-x-0 before:origin-top-left before:transition before:ease-in-out before:duration-300">
                     Contact
                   </span>
-                </Link>
+                </ScrollLink>
               </li>
-              <li className="ml-8">
+              <li className="ml-8 cursor-pointer">
                 <span
                   className="cursor-pointer"
                   onClick={
@@ -136,30 +166,58 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
         <div className="flex-col py-4 text-center">
           <ul>
             <li onClick={() => setMenuOpen(false)} className="mb-7">
-              <Link href="#one">
+              <ScrollLink
+                to="one"
+                spy={true}
+                smooth={true}
+                offset={-100}
+                duration={100}
+                onClick={() => setMenuOpen(false)}
+              >
                 <span className="cursor-pointer text-white">About</span>
-              </Link>
+              </ScrollLink>
             </li>
           </ul>
           <ul>
             <li onClick={() => setMenuOpen(false)} className="mb-7">
-              <Link href="#two">
+              <ScrollLink
+                to="two"
+                spy={true}
+                smooth={true}
+                offset={-100}
+                duration={100}
+                onClick={() => setMenuOpen(false)}
+              >
                 <span className="cursor-pointer text-white">Skills</span>
-              </Link>
+              </ScrollLink>
             </li>
           </ul>
           <ul>
             <li onClick={() => setMenuOpen(false)} className="mb-7">
-              <Link href="#three">
+              <ScrollLink
+                to="three"
+                spy={true}
+                smooth={true}
+                offset={-100}
+                duration={100}
+                onClick={() => setMenuOpen(false)}
+              >
                 <span className="cursor-pointer text-white">Projects</span>
-              </Link>
+              </ScrollLink>
             </li>
           </ul>
           <ul>
             <li onClick={() => setMenuOpen(false)} className="mb-7">
-              <Link href="#four">
+              <ScrollLink
+                to="four"
+                spy={true}
+                smooth={true}
+                offset={-100}
+                duration={100}
+                onClick={() => setMenuOpen(false)}
+              >
                 <span className="cursor-pointer text-white">Contact</span>
-              </Link>
+              </ScrollLink>
             </li>
           </ul>
         </div>

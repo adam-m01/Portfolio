@@ -1,97 +1,111 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+// Custom hook for detecting window resize and checking if the device is a desktop
 const useResizeListener = () => {
-  // Initializing the state to `false` as a default, it will be updated in useEffect
   const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
-    // This check ensures the code runs only in the browser where `window` is defined
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth > 768);
+    };
+
     if (typeof window !== "undefined") {
-      const handleResize = () => {
-        setIsDesktop(window.innerWidth > 768);
-      };
-
-      // Set initial desktop state
       handleResize();
-
-      // Listen for window resize events
       window.addEventListener("resize", handleResize);
-
-      // Clean up the event listener on component unmount
-      return () => {
-        window.removeEventListener("resize", handleResize);
-      };
+      return () => window.removeEventListener("resize", handleResize);
     }
   }, []);
 
   return isDesktop;
 };
 
+const MotionText = ({
+  children,
+  className,
+  yOffset,
+  isDesktop,
+  isHovered,
+  handleHover,
+}) => {
+  return (
+    <motion.div
+      onMouseEnter={() => handleHover(true)}
+      onMouseLeave={() => handleHover(false)}
+      initial={{ y: 0 }}
+      animate={{ y: isDesktop && isHovered ? yOffset : 0 }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
 const Main = () => {
-  const [isHovered, setIsHovered] = useState(false);
   const isDesktop = useResizeListener();
+  const [isHovered, setIsHovered] = useState(false);
 
-  const imageMotionProps = {
-    initial: { y: 0 },
-    animate: { y: isDesktop && isHovered ? 25 : 0 },
-  };
-
-  const titleMotionProps = {
-    initial: { y: 0 },
-    animate: { y: isDesktop && isHovered ? -25 : 0 },
+  const handleHover = (hovered) => {
+    setIsHovered(hovered);
   };
 
   return (
     <section>
-      <div className="flex flex-col items-center justify-center h-screen lg:h-[88vh]">
+      <div className="flex flex-col items-center justify-center h-screen lg:h-[88vh] select-none">
         <div className="text-center mt-16 lg:mt-0">
-          {/* Titles */}
-          <motion.h3
-            {...titleMotionProps}
+          <MotionText
             className="text-2xl text-white dark:text-black md:text-3xl xl:mt-10"
+            yOffset={-25}
+            isDesktop={isDesktop}
+            isHovered={isHovered}
+            handleHover={handleHover}
           >
             Hello👋, I'm
-          </motion.h3>
-          <motion.h2
-            {...titleMotionProps}
+          </MotionText>
+
+          <MotionText
             className="text-7xl font-bold font-poppins text-transparent bg-clip-text bg-gradient-to-b from-[#1CCDFF] to-[#b249f8] lg:text-8xl dark:bg-gradient-to-b"
+            yOffset={-25}
+            isDesktop={isDesktop}
+            isHovered={isHovered}
+            handleHover={handleHover}
           >
             Adam
-          </motion.h2>
+          </MotionText>
 
-          {/* Image */}
-          <motion.div
-            onHoverStart={() => setIsHovered(true)}
-            onHoverEnd={() => setIsHovered(false)}
-            {...imageMotionProps}
-            className="relative mt-[-18%] mx-auto rounded-full w-80 h-80 overflow-hidden md:h-96 md:w-96 md:mt-[-18%] xl:mt-[-18%]"
+          <MotionText
+            className="relative mt-[-18%] mx-auto rounded-full w-80 h-80 overflow-hidden md:h-96 md:w-96 xl:mt-[-18%]"
+            yOffset={25}
+            isDesktop={isDesktop}
+            isHovered={isHovered}
+            handleHover={handleHover}
           >
-            <img
+            <Image
               src="/main-portrait.webp"
               alt="Main Portrait"
-              loading="eager"
-              width="100%"
+              width={400}
+              height={400}
+              className="pointer-events-none"
+              priority
             />
-          </motion.div>
+          </MotionText>
 
-          {/* Subtitle */}
-          <motion.h3
-            onHoverStart={() => setIsHovered(true)}
-            onHoverEnd={() => setIsHovered(false)}
-            {...imageMotionProps}
+          <MotionText
             className="text-xl mt-[-8%] text-white dark:text-black md:text-xl xl:text-2xl"
+            yOffset={25}
+            isDesktop={isDesktop}
+            isHovered={isHovered}
+            handleHover={handleHover}
           >
             Designer{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#1CCDFF] to-[#b249f8] dark:bg-gradient-to-b">
               //
             </span>{" "}
             Developer
-          </motion.h3>
+          </MotionText>
         </div>
 
-        {/* Project Button */}
         <div className="text-lg pt-10 lg:hidden">
           <a href="#three">
             <button
@@ -104,7 +118,6 @@ const Main = () => {
         </div>
       </div>
 
-      {/* Scroll Container */}
       <div className="scroll-container justify-center mx-auto dark:bg-darkBg hidden md:block">
         <div className="scroller"></div>
       </div>
