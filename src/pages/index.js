@@ -33,7 +33,7 @@ export default function Home() {
         </Head>
         <Navbar toggleDarkMode={toggleDarkMode} />
         <main
-          className={`flex flex-col bg-deepBlue pt-40 px-4 md:px-8 lg:px-20 dark:bg-white font-poppins `}
+          className={` bg-deepBlue px-6  dark:bg-white font-poppins `}
           id="home"
         >
           <Main />
