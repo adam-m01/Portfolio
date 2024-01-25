@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 
 // Custom hook for detecting window resize and checking if the device is a desktop
 const useResizeListener = () => {
@@ -107,14 +108,20 @@ const Main = () => {
         </div>
 
         <div className="text-lg pt-10 lg:hidden">
-          <a href="#three">
+          <ScrollLink
+            to="three"
+            spy={true}
+            smooth={true}
+            offset={-100}
+            duration={100}
+          >
             <button
               className="w-52 border-[0.1rem] border-navGrey bg-[rgba(42,43,56,.5)] text-white py-2 px-4 rounded-lg dark:bg-darkBg dark:border-darkBorder"
               aria-label="Visit Project"
             >
               Projects
             </button>
-          </a>
+          </ScrollLink>
         </div>
       </div>
 
