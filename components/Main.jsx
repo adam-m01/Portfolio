@@ -3,20 +3,16 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 
-// Custom hook for detecting window resize and checking if the device is a desktop
 const useResizeListener = () => {
   const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth > 768);
-    };
+    const handleResize = () => setIsDesktop(window.innerWidth > 768);
+    
+    handleResize();
 
-    if (typeof window !== "undefined") {
-      handleResize();
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return isDesktop;
@@ -46,10 +42,7 @@ const MotionText = ({
 const Main = () => {
   const isDesktop = useResizeListener();
   const [isHovered, setIsHovered] = useState(false);
-
-  const handleHover = (hovered) => {
-    setIsHovered(hovered);
-  };
+  const handleHover = (hovered) => setIsHovered(hovered);
 
   return (
     <section>

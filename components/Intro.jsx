@@ -1,7 +1,41 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import FadeInWhenVisible from "./FadeInWhenVisible";
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import FadeInWhenVisible from './FadeInWhenVisible';
+
+const TextSection = ({ title, content }) => {
+  const parseContent = (content) => {
+    const regex = /<span class='font-bold'>(.*?)<\/span>|<br \/>/g;
+    return content.split(regex).filter(Boolean).map((part, index) => {
+      if (part === '<br />') return <br key={index} />;
+      if (part.match(/<span class='font-bold'>/))
+        return <span key={index} className="font-bold">{part.replace(/<\/?span class='font-bold'>/g, '')}</span>;
+      return part;
+    });
+  };
+
+  return (
+    <div>
+      <h3 className="text-xl lg:text-2xl font-bold py-2 pt-5 md:text-center lg:text-left">
+        {title}
+      </h3>
+      <p className="text-md lg:text-lg md:text-base md:text-center lg:text-left">
+        {parseContent(content)}
+      </p>
+    </div>
+  );
+};
+
+const CertificationLink = ({ url, imgSrc, altText }) => (
+  <a href={url} target="_blank" rel="noopener noreferrer" aria-label="View Certification">
+    <Image
+      src={imgSrc}
+      width={100}
+      height={100}
+      alt={altText}
+    />
+  </a>
+);
 
 const Intro = () => {
   return (
@@ -22,8 +56,7 @@ const Intro = () => {
                 Let me <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#1CCDFF] to-[#b249f8] dark:bg-gradient-to-b">
                   introduce
-                </span>{" "}
-                myself.
+                </span> myself.
               </h3>
               <p className="text-sm lg:text-lg text-white dark:text-darkText md:text-center lg:text-left">
                 Insight into my digital footstep
@@ -37,7 +70,7 @@ const Intro = () => {
                 {/* Journey Section */}
                 <TextSection
                   title="My Journey"
-                  content="I <span className='font-bold'>design</span>, <span className='font-bold'>develop</span> and <span className='font-bold'>deploy</span> digital experiences whilst embarking on a journey through <span className='font-bold'>cloud computing</span> and exploring the <span className='font-bold'>Dev-Ops Lifecycle</span>."
+                  content="I <span class='font-bold'>design</span>, <span class='font-bold'>develop</span> and <span class='font-bold'>deploy</span> digital experiences whilst embarking on a journey through <span class='font-bold'>cloud computing</span> and exploring the <span class='font-bold'>Dev-Ops Lifecycle</span>."
                 />
 
                 {/* Education Section */}
@@ -65,8 +98,8 @@ const Intro = () => {
                     />
                   </div>
                 </div>
-              </div>
 
+              </div>
               {/* Portrait Image */}
               <div className="rounded-xl w-full my-10 justify-center hidden lg:flex">
                 <Image
@@ -85,32 +118,5 @@ const Intro = () => {
     </FadeInWhenVisible>
   );
 };
-
-// Text Section Component
-const TextSection = ({ title, content }) => (
-  <div>
-    <h3 className="text-xl lg:text-2xl font-bold py-2 md:text-center lg:text-left">
-      {title}
-    </h3>
-    <p
-      className="text-md lg:text-lg md:text-base md:text-center lg:text-left"
-      dangerouslySetInnerHTML={{ __html: content }}
-    />
-  </div>
-);
-
-// Certification Link Component
-const CertificationLink = ({ url, imgSrc, altText }) => (
-  <Link href={url} target="_blank" rel="noopener noreferrer">
-    <Image
-      src={imgSrc}
-      width={100}
-      height={100}
-      alt={altText}
-      aria-label="View Certification"
-      className="pointer-events-none"
-    />
-  </Link>
-);
 
 export default Intro;

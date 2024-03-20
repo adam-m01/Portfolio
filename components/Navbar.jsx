@@ -9,7 +9,6 @@ import {
 } from "react-icons/ai";
 import Image from "next/image";
 import { useState } from "react";
-import Link from "next/link";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 
 const Navbar = ({ toggleDarkMode, darkMode }) => {
@@ -241,13 +240,7 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
           >
             <AiFillGithub size={30} className="cursor-pointer text-white " />
           </a>
-          <a
-            onClick={() => setMenuOpen(false)}
-            href="#mail"
-            aria-label="Visit Mail"
-          >
-            <IoMdMail size={30} className="cursor-pointer text-white " />
-          </a>
+
         </div>
       </div>
     </nav>

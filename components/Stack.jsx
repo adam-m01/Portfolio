@@ -1,17 +1,18 @@
 import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import FadeInWhenVisible from "./FadeInWhenVisible";
 import { BiLogoJavascript } from "react-icons/bi";
+import { FaReact, FaDocker, FaPython, FaJenkins } from "react-icons/fa";
+import { SiTerraform} from "react-icons/si";
 import {
   HiMiniPaintBrush,
   HiMiniCog6Tooth,
   HiMiniCloudArrowUp,
 } from "react-icons/hi2";
-import { FaReact, FaAws, FaDocker, FaPython } from "react-icons/fa";
 import { TbBrandNextjs, TbSql } from "react-icons/tb";
-import { SiTailwindcss, SiVmware } from "react-icons/si";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import FadeInWhenVisible from "./FadeInWhenVisible";
+import { SiTailwindcss } from "react-icons/si";
 
 const Stack = () => {
   const sections = [
@@ -40,23 +41,23 @@ const Stack = () => {
     {
       title: "Infrastructure",
       icon: <HiMiniCloudArrowUp size={50} />,
-      description: "Deployment",
+      description: "Orchestration",
       technologies: [
-        <FaAws size={35} />,
         <FaDocker size={35} />,
-        <SiVmware size={35} />,
+        <SiTerraform size={35} />,
+        <FaJenkins size={35} />,
       ],
-      techNames: ["AWS", "Docker", "VMware"],
+      techNames: ["Docker", "Terraform", "Jenkins"],
     },
   ];
 
   const settings = {
     dots: false,
-    arrows: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    arrows: false,
     responsive: [
       {
         breakpoint: 768,
@@ -64,16 +65,14 @@ const Stack = () => {
           slidesToShow: 1,
           slidesToScroll: 1,
           infinite: true,
-
         },
       },
       {
-        breakpoint: 1024,
+        breakpoint: 1020,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 1,
           slidesToScroll: 1,
           infinite: true,
-
         },
       },
     ],
@@ -81,13 +80,11 @@ const Stack = () => {
 
   return (
     <FadeInWhenVisible>
-      <section>
-        <div className="relative" id="two">
-          <BackgroundCircle />
-          <div className="mx-auto items-center lg:max-w-6xl select-none">
-            <ContentTitle />
-            <StackContent sections={sections} settings={settings} />
-          </div>
+      <section className="relative" id="two">
+        <BackgroundCircle />
+        <div className="mx-auto py-12 lg:max-w-6xl select-none">
+          <StackHeader />
+          <StackContent sections={sections} settings={settings} />
         </div>
       </section>
     </FadeInWhenVisible>
@@ -100,8 +97,7 @@ const BackgroundCircle = () => (
     style={{ filter: "blur(100px)" }}
   ></div>
 );
-
-const ContentTitle = () => (
+const StackHeader = () => (
   <div>
     <h3 className="text-3xl text-white dark:text-black py-3 pt-32 font-bold font-poppins xl:text-6xl md:text-6xl md:text-center lg:text-left">
       My{" "}
@@ -116,31 +112,37 @@ const ContentTitle = () => (
 );
 
 const StackContent = ({ sections, settings }) => (
-  <div className="relative z-10 text-white">
-    <div className="hidden lg:grid lg:grid-cols-3 lg:mx-2 xl:mx-0">
+  <div>
+    <SliderView sections={sections} settings={settings} />
+    <GridView sections={sections} />
+  </div>
+);
+
+const SliderView = ({ sections, settings }) => (
+  <div className="lg:hidden">
+    <Slider {...settings}>
       {sections.map((section, index) => (
-        <div key={index} className="p-2">
+        <div key={index} className="px-2">
           <SectionCard section={section} />
         </div>
       ))}
-    </div>
-    <div className="lg:hidden rounded-xl">
-      <Slider {...settings} className="custom-slider">
-        {sections.map((section, index) => (
-          <div key={index} className="p-2">
-            <SectionCard section={section} />
-          </div>
-        ))}
-      </Slider>
-    </div>
-    <div className="text-center text-white dark:text-black  md:hidden">
+    </Slider>
+    <div className="text-center text-white dark:text-black">
       Swipe for more →
     </div>
   </div>
 );
 
+const GridView = ({ sections }) => (
+  <div className="hidden lg:grid lg:grid-cols-3 lg:gap-8">
+    {sections.map((section, index) => (
+      <SectionCard key={index} section={section} />
+    ))}
+  </div>
+);
+
 const SectionCard = ({ section }) => (
-  <div className="text-center p-10 bg-[rgba(42,43,56,.5)] dark:bg-darkBg rounded-xl my-5">
+  <div className="text-center p-10 bg-[rgba(42,43,56,.5)] dark:bg-darkBg rounded-xl my-5 mx-auto sm:w-[60%] lg:w-full">
     <div className="flex justify-center">{section.icon}</div>
     <h3 className="text-xl font-bold pt-5">{section.title}</h3>
     <h3 className="text-md lg:text-lg font-medium text-white">
@@ -159,9 +161,9 @@ const SectionCard = ({ section }) => (
 );
 
 const TechIcon = ({ tech, techName }) => (
-  <div className="flex flex-col items-center">
+  <div className="flex flex-col items-center ">
     {tech}
-    <p className="text-white py-1 text-center">{techName}</p>
+    <p className="text-white pt-1 text-center ">{techName}</p>
   </div>
 );
 
