@@ -35,7 +35,7 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
       <div
         className={`relative ${
           menuOpen
-            ? "h-[3.7rem] z-50  "
+            ? "h-[3.7rem] z-50"
             : "backdrop-blur-extra h-[3.7rem] rounded-2xl dark:backdrop-blur-none "
         }`}
       >

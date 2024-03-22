@@ -143,8 +143,8 @@ const GridView = ({ sections }) => (
 
 const SectionCard = ({ section }) => (
   <div className="text-center p-10 bg-[rgba(42,43,56,.5)] dark:bg-darkBg rounded-xl my-5 mx-auto sm:w-[60%] lg:w-full">
-    <div className="flex justify-center">{section.icon}</div>
-    <h3 className="text-xl font-bold pt-5">{section.title}</h3>
+    <div className="flex text-white dark:text-white justify-center">{section.icon}</div>
+    <h3 className="text-xl text-white dark:text-white font-bold pt-5">{section.title}</h3>
     <h3 className="text-md lg:text-lg font-medium text-white">
       {section.description}
     </h3>
@@ -161,9 +161,9 @@ const SectionCard = ({ section }) => (
 );
 
 const TechIcon = ({ tech, techName }) => (
-  <div className="flex flex-col items-center ">
+  <div className="flex text-white dark:text-white flex-col items-center ">
     {tech}
-    <p className="text-white pt-1 text-center ">{techName}</p>
+    <p className="text-white dark:text-white pt-1 text-center ">{techName}</p>
   </div>
 );
 
